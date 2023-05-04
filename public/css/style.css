@@ -1,0 +1,18 @@
+html{
+    background: #000;
+}
+
+div#video-base {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+div video {
+    height:  300px;
+    width: 400px;
+    border-radius: 8px;
+    border: 5px solid rgb(45, 235, 20);
+
+}
