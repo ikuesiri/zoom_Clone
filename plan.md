@@ -8,5 +8,3 @@
 - Add the ability to create messages
 - Add mute button and 
 - Add stop button
-
-

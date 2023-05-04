@@ -1,15 +1,24 @@
 const express = require("express");
 const app = express();
+const server = require("http").Server(app);
+const { v4: uuidv4 } = require('uuid');
 
+app.set("view engine", "ejs");
 
-
-
-app.set("view engine", "ejs")
 
 app.get("/", (req, res) =>{
-    res.render("room")
+    res.redirect(`/${uuidv4()}`)
+   
+})
+
+
+app.get("/:roomId", (req, res) =>{
+    const roomId =  req.params.roomId
+    res.render("room", {
+        roomId : roomId
+    })
 })
 
 PORT =  process.env.PORT || 3000;
-app.listen(PORT, ()=> console.log(`Servering listening at port:${PORT}`));
+server.listen(PORT, ()=> console.log(`Servering listening at port:${PORT}`));
 
